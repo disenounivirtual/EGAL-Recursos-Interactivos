@@ -5,45 +5,103 @@
     tags to the same version! (Below it's "@2.0.3")
   -->
 
-    <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700|Material+Icons" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/quasar@2.0.3/dist/quasar.prod.css" rel="stylesheet" type="text/css">
-    </head>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700|Material+Icons"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quasar@2.0.3/dist/quasar.prod.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      body{ font-family: 'Poppins';}
 
-    <body>
+
+    </style>
+  </head>
+
+  <body>
     <!-- example of injection point where you write your app template -->
-        <div id="q-app">
+    <div id="q-app">
+      <div class="element-container">
 
+        <q-splitter 
+          v-model="splitterModel"
+          style="height: 200px;"
+        >
 
+        <template v-slot:before>
+          <q-tabs 
+            v-model="tab"
+            vertical
+            indicator-color="red"
+            active-color="red"
+            content-class="egal-colors"
+          >
+          <!-- Botón de menú -->
+            <q-tab 
+              name="mails" 
+              label="Mails"
 
+              >
+            </q-tab>
+          <!-- Termina el botón de menú -->
 
-        </div>
+            
+          </q-tabs>
+        </template>
+  
+        <template v-slot:after>
+          <q-tab-panels
+            v-model="tab"
+            animated
+            swipeable
+            vertical
+            transition-prev="jump-up"
+            transition-next="jump-up"
+          >
+          <!-- Inicio del panel  -->
+          <q-tab-panel name="mails">
+            <div class="text-h4 q-mb-md">Mails</div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+          </q-tab-panel>
+          <!-- Termina el panel -->
+  
+        </q-tab-panels>
+        </template>
 
+        </q-splitter>
+        
+      </div>
+
+    </div>
 
     <!-- Add the following at the end of your body tag -->
     <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@2.0.3/dist/quasar.umd.prod.js"></script>
 
     <script>
-
-        const { ref } = Vue
-        /*
+      const { ref } = Vue;
+      /*
         Example kicking off the UI. Obviously, adapt this to your specific needs.
         Assumes you have a <div id="q-app"></div> in your <body> above
         */
-        const app = Vue.createApp({
-        setup () {
-            return {
+      const app = Vue.createApp({
+        setup() {
+          return {
+            tab: ref('mails'),
+            splitterModel:ref(16)
+          };
+        },
+      });
 
-            }
-        }
-        })
+      app.use(Quasar);
 
-        app.use(Quasar)
-
-        app.mount('#q-app')
-
-
-        </script>
-    </body>
+      app.mount("#q-app");
+    </script>
+  </body>
 </html>
