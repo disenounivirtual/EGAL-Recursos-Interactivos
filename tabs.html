@@ -17,8 +17,44 @@
       type="text/css"
     />
     <style>
+      :root{
+        --verde:#bfd52d;
+        --verde-claro: #b5dd84;
+        --vino-tinto: #332c41;
+        --ocre: #ffda4d;
+        /* Secundarios */
+        --rojo-error:#ef3b54;
+        --verde-light:#27ca8b;
+        --ocre-dark:#ffa117;
+        --vino-tinto-deep:#3d2632;
+        /* Terciarios */
+        --azul-claro:#c4f6fd;
+        --verde-claro: #f1e7be;
+        --rosa-claro:#f1bab0;
+
+
+      }
+
+
       body{ font-family: 'Poppins';}
 
+      .egal-colors{
+
+        color:var(--verde);
+      }
+
+      .egal-item{
+        color:var(--vino-tinto)
+      }
+
+      .text-vino-tinto{
+        color:var(--vino-tinto)
+      }
+
+      .tipo-h3{
+        font-weight: 600;
+        font-size: 2rem;
+      }
 
     </style>
   </head>
@@ -37,16 +73,16 @@
           <q-tabs 
             v-model="tab"
             vertical
-            indicator-color="red"
-            active-color="red"
             content-class="egal-colors"
           >
           <!-- Botón de menú -->
             <q-tab 
               name="mails" 
-              label="Mails"
+
+              content-class="egal-item"
 
               >
+              Content
             </q-tab>
           <!-- Termina el botón de menú -->
 
@@ -62,12 +98,14 @@
             vertical
             transition-prev="jump-up"
             transition-next="jump-up"
+            content-class="panel-item"
           >
           <!-- Inicio del panel  -->
           <q-tab-panel name="mails">
-            <div class="text-h4 q-mb-md">Mails</div>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+            <div class="tipo-h3 q-mb-md text-vino-tinto">Mails</div>
+            <div class="content-info text-vino-tinto">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+            </div>
           </q-tab-panel>
           <!-- Termina el panel -->
   
