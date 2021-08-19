@@ -6,11 +6,16 @@
   -->
 
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" 
+      rel="stylesheet" 
+      type="text/css">
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700|Material+Icons"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700"
       rel="stylesheet"
       type="text/css"
     />
+
     <link
       href="https://cdn.jsdelivr.net/npm/quasar@2.0.3/dist/quasar.prod.css"
       rel="stylesheet"
@@ -29,7 +34,7 @@
         --vino-tinto-deep:#3d2632;
         /* Terciarios */
         --azul-claro:#c4f6fd;
-        --verde-claro: #f1e7be;
+        --amarillo-claro: #f1e7be;
         --rosa-claro:#f1bab0;
 
 
@@ -44,7 +49,7 @@
       }
 
       .egal-item{
-        color:var(--vino-tinto)
+        color:var(--vino-tinto);
       }
 
       .text-vino-tinto{
@@ -56,65 +61,308 @@
         font-size: 2rem;
       }
 
+      .wrap{
+        white-space: initial;
+      }
+
+      .flex{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .caracter-planif{
+        padding: 1rem;
+        text-align: center;
+        font-weight: 600;
+        font-size: 2em;
+        height: 100%;
+        border-bottom: 2px solid var(--verde);
+        background-color: var(--vino-tinto);
+        color:var(--amarillo-claro)
+      }
+
+      .element-container{
+        flex-grow: 1;
+      }
+
+      .svg{
+        width: 100px;
+        margin: 0 auto;
+        padding: 2em;
+      }
+
     </style>
   </head>
 
   <body>
     <!-- example of injection point where you write your app template -->
     <div id="q-app">
-      <div class="element-container">
+      <section>
 
-        <q-splitter 
-          v-model="splitterModel"
-          style="height: 200px;"
-        >
 
-        <template v-slot:before>
-          <q-tabs 
-            v-model="tab"
-            vertical
-            content-class="egal-colors"
+
+
+        <div class="caracter-planif">
+          Características de la planificación
+        </div>
+
+        <div class="element-container">
+  
+          <q-splitter 
+            v-model="splitterModel"
+            style="height: 640px;"
           >
-          <!-- Botón de menú -->
-            <q-tab 
-              name="mails" 
-
-              content-class="egal-item"
-
+  
+          <template v-slot:before>
+            <q-tabs 
+              v-model="tab"
+              vertical
+              content-class="egal-colors"
+              no-caps
               >
-              Content
-            </q-tab>
-          <!-- Termina el botón de menú -->
-
-            
-          </q-tabs>
-        </template>
+              <!-- Botón de menú -->
+              <q-tab 
+                name="item1" 
+                content-class="egal-item"
+                >
+                <p class="wrap q-mb-none">Caracter complejo</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
   
-        <template v-slot:after>
-          <q-tab-panels
-            v-model="tab"
-            animated
-            swipeable
-            vertical
-            transition-prev="jump-up"
-            transition-next="jump-up"
-            content-class="panel-item"
-          >
-          <!-- Inicio del panel  -->
-          <q-tab-panel name="mails">
-            <div class="tipo-h3 q-mb-md text-vino-tinto">Mails</div>
-            <div class="content-info text-vino-tinto">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
-            </div>
-          </q-tab-panel>
-          <!-- Termina el panel -->
+            <!-- Botón de menú -->
+              <q-tab 
+                name="item2" 
+                content-class="egal-item"
+                >
+                <p class="wrap q-mb-none">Carácter histórico</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
   
-        </q-tab-panels>
-        </template>
+            <!-- Botón de menú -->
+              <q-tab 
+              name="item3" 
+              content-class="egal-item"
+              >
+              <p class="wrap q-mb-none ">Carácter social</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
+  
+            <!-- Botón de menú -->
+              <q-tab 
+              name="item4" 
+              content-class="egal-item"
+              >
+              <p class="wrap q-mb-none">Carácter temporal</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
+  
+            <!-- Botón de menú -->
+              <q-tab 
+              name="item5" 
+              content-class="egal-item"
+              >
+              <p class="wrap q-mb-none">Carácter mediador</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
+  
+            <!-- Botón de menú -->
+              <q-tab 
+              name="item6" 
+              content-class="egal-item"
+              >
+              <p class="wrap q-mb-none">Carácter fundamentado</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
+            <!-- Botón de menú -->
+              <q-tab 
+              name="item7" 
+              content-class="egal-item"
+              >
+              <p class="wrap q-mb-none">Carácter Político</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
+            <!-- Botón de menú -->
+              <q-tab 
+              name="item8" 
+              content-class="egal-item"
+              >
+              <p class="wrap q-mb-none">Carácter sistematizador</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
+            <!-- Botón de menú -->
+              <q-tab 
+              name="item9" 
+              content-class="egal-item"
+              >
+              <p class="wrap q-mb-none">Carácter comunicacional</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
+            <!-- Botón de menú -->
+              <q-tab 
+              name="item10" 
+              content-class="egal-item"
+              >
+              <p class="wrap q-mb-none">Carácter referencial</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
+            <!-- Botón de menú -->
+              <q-tab 
+              name="item11" 
+              content-class="egal-item"
+              >
+              <p class="wrap q-mb-none">Carácter transformador</p>
+              </q-tab>
+            <!-- Termina el botón de menú -->
+  
+  
+              
+            </q-tabs>
+          </template>
+    
+          <template v-slot:after>
+            <q-tab-panels
+              v-model="tab"
+              animated
+              swipeable
+              vertical
+              transition-prev="jump-up"
+              transition-next="jump-up"
+              content-class="panel-item"
+            >
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item1">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter complejo</div>
+              <div class="content-info text-vino-tinto">
+                <p >La planeación es un proceso complejo en la medida en que atiende 
+                  la complejidad propia de la realidad, pero en ese mismo sentido,
+                   también puede ser considerada como una herramienta para reducir 
+                   la complejidad de los sistemas objeto de planificación.</p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item2">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter histórico</div>
+              <div class="content-info text-vino-tinto">
+                <p >La planeación integra lecturas temporales que involucran el pasado, 
+                  la actualidad o coyuntura y las perspectivas de futuro.
+                </p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item3">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter social</div>
+              <div class="content-info text-vino-tinto">
+                <p >La planeación promueve la participación, movilización y transformación 
+                  de los actores sociales a partir de la interacción entre ellos.
+                </p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item4">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter temporal</div>
+              <div class="content-info text-vino-tinto">
+                <p> La planeación siempre plantea trayectorias, caminos y acciones a futuro, 
+                  pero en horizontes temporales definidos, que por lo regular son de corto plazo 
+                  (entre 1 y 4 años), mediano plazo (entre 4 y 10 años) o largo plazo (más de diez años).
+                </p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item5">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter mediador</div>
+              <div class="content-info text-vino-tinto">
+                <p >La planeación no es un fin, por el contrario es un 
+                  medio que orienta y facilita el desarrollo de acciones que permitan 
+                  pasar de una situación a otra mejor o deseable.</p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item6">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter fundamentado</div>
+              <div class="content-info text-vino-tinto">
+                <p >La planeación se caracteriza por tener sustento en principios, conceptos y 
+                  contextos concretos, además de estar soportada en metodologías y 
+                  herramientas estructuradas.
+                </p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item7">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter político</div>
+              <div class="content-info text-vino-tinto">
+                <p >La planeación, al ser un proceso de evaluación y construcción de futuros posibles y deseables 
+                  entre diferentes actores, está sujeta a la confrontación y armonización de diversas 
+                  perspectivas e intereses de los actores involucrados.
+                </p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item8">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter sistematizador</div>
+              <div class="content-info text-vino-tinto">
+                <p >La planeación, de principio a fin, es un proceso estructurado en el que en todo 
+                  momento demanda la organización de documentos, experiencias, perspectivas, 
+                  propuestas, proyectos, metas, entre otros.
+                </p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item9">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter comunicacional</div>
+              <div class="content-info text-vino-tinto">
+                <p>La planeación al involucrar la participación de diversos actores, 
+                  es un proceso en el que hay intercambio de perspectivas, opiniones e ideas, 
+                  siempre plagadas de una subjetividad que conviene reconocer y asumir en lugar
+                   de invisibilizar o reducir. Por ello, en la práctica, también es un proceso comunicativo.</p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item10">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter referencial</div>
+              <div class="content-info text-vino-tinto">
+                <p >La planeación busca orientar, de forma prescriptiva y regulativa, 
+                  las acciones de individuos y grupos en diferentes contextos 
+                  organizaciones y/o territoriales.</p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+            <!-- Inicio del panel  -->
+            <q-tab-panel name="item11">
+              <div class="tipo-h3 q-mb-md text-vino-tinto">Carácter transformador</div>
+              <div class="content-info text-vino-tinto">
+                <p >La planeación es un proceso que, en última instancia, está orientado a propósitos 
+                  de cambio en las estructuras organizacionales, sociales, 
+                  territoriales y de desarrollo en las que se gesta</p>
+              </div>
+            </q-tab-panel>
+            <!-- Termina el panel -->
+  
+    
+          </q-tab-panels>
+          </template>
+  
+          </q-splitter>
+          
+        </div>
 
-        </q-splitter>
-        
-      </div>
+        <div class="footer">
+          <div class="svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.85 37.95"><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path d="M18,37.12S4.36,27.13,0,12.49c0,0,15.26,7.69,22.41,20.44C23.64,35.11,23,39.86,18,37.12Z" style="fill:#bfd52d"/><path d="M35.93,33.05S42.58,17.51,55.85,10c0,0-4,16.6-14.84,26.45C39.16,38.09,34.39,38.56,35.93,33.05Z" style="fill:#ffd017"/><path d="M26.79,34.69S23.45,14.79,28.22,0c0,0,7.08,19.79,4.64,34.2C32.44,36.68,29,40,26.79,34.69Z" style="fill:#332c41"/></g></g></svg>
+          </div>
+          
+        </div>
+      </section>
 
     </div>
 
@@ -131,8 +379,8 @@
       const app = Vue.createApp({
         setup() {
           return {
-            tab: ref('mails'),
-            splitterModel:ref(16)
+            tab: ref('item1'),
+            splitterModel:ref(23)
           };
         },
       });
